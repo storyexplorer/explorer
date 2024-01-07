@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<article class="post detailed">
+  <h1>{{ page.title }}</h1>
+
+  <div>
+    <p class="author_title">{{site.author}}  ·  {{ page.date | date: "%B %e, %Y" }}</p>
+    {% if page.last_modified_at %}
+    <p class="author_title" datetime="{{ page.last_modified_at | date_to_xmlschema }}">(Updated: {{ page.last_modified_at | date: "%b %-d, %Y" }})</p>
+    {% endif %}
+    <div class="post-tags">
+      {% if post %}
+        {% assign categories = post.categories %}
+      {% else %}
+        {% assign categories = page.categories %}
+      {% endif %}
+      {% for category in categories %}
+        <a>{{category}}</a>
+        {% unless forloop.last %}&nbsp;{% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+    
+  <div class="entry">
+    {{ content }}
+  </div>
+  
+  <!--
+    For commenting based on a Discord thread, sdd this to the widgetbot tag. 
+    Then add the thread ID to the post header: 
+    thread="{{ page.discordThreadID }}" 
+  -->
+  <div class="discord-widgetbot-comments">
+    <h2>Comments</h2>
+    <widgetbot
+    id="widgetbot"
+    server="299881420891881473"
+    channel="450428756855750666"
+    width=100%
+    height=100%
+    ></widgetbot>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+  </div>
+
+</article>
