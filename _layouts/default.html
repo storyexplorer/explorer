@@ -16,7 +16,7 @@
 
   <body>
     <!-- <div id="bar"></div> -->
-    <div class="wrapper-container">
+    <div class="page-container">
       <div class="wrapper-masthead">
         <div class="container">
           <header class="masthead clearfix">
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="wrapper-main">
+      <div class="wrapper-page-content">
         <div id="main" role="main" class="container">
           {{ content }}
         </div>
@@ -47,16 +47,23 @@
 
       <div class="wrapper-footer">
         <!-- <div class="container"> -->
+          
+          <!-- {% include svg-icons.html %} -->
+
           <footer class="footer">
-            <a href="{{ site.baseurl }}/about">About</a>
-            <a href="{{ site.baseurl }}/contact">Contact</a>
-            <a href="{{ site.baseurl }}/disclosure">FTC Disclosure</a>
-            <a href="{{ site.baseurl }}/privacy-policy">Privacy Policy</a>
-            <a href="{{ site.baseurl }}/archive">Archive</a>
-            <a href="{{ site.baseurl }}/feed.xml">RSS</a>
-            <br>
-            <a class="copyright" href="{{site.baseurl}}/copyright/"> Add your copyright statement </a>
-            <!-- {% include svg-icons.html %} -->
+            <div class="footer-links">
+              <a href="{{ site.baseurl }}/about">About</a>
+              <a href="{{ site.baseurl }}/contact">Contact</a>
+              <a href="{{ site.baseurl }}/disclosure">FTC Disclosure</a>
+              <a href="{{ site.baseurl }}/privacy-policy">Privacy Policy</a>
+              <a href="{{ site.baseurl }}/archive">Archive</a>
+              <a href="{{ site.baseurl }}/feed.xml">RSS</a>
+            </div>
+
+            <div id="footer-copyright">
+              <a class="copyright" href="{{site.baseurl}}/copyright/"> Add your copyright statement </a>
+            </div>
+
           </footer>
         <!-- </div> -->
       </div>

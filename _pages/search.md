@@ -5,7 +5,7 @@ permalink: /search/
 ---
 
 <div id="search-container">
-    <input type="text" id="search-input" placeholder="Search through post titles and dates...">
+    <input type="text" id="search-input" placeholder="Post titles, dates, tags">
     <ul id="results-container"></ul>
 </div>
 
@@ -15,7 +15,25 @@ permalink: /search/
     SimpleJekyllSearch({
     searchInput: document.getElementById('search-input'),
     resultsContainer: document.getElementById('results-container'),
-    searchResultTemplate: '<div style="text-align: left !important;"><a href="{url}"><h1 style="text-align:left !important;">{title}</h1></a><span style="text-align:left !important;">{date}</span></div>',
+    searchResultTemplate: '<div style="text-align: left !important;"> <a href="{url}"><h1 style="text-align:left !important;">{title}</h1></a> <div class="post-tags" style="text-align: left !important;"> <a>{category}</a> </div> <span style="text-align:left !important;">{date}</span> </div>',
     json: '{{ site.baseurl }}/search.json'
     });
 </script>
+
+<!-- Keeping this down here so it's easier to see the search template layout -->
+<!-- 
+<div style="text-align: left !important;">
+    
+    <a href="{url}">
+        <h1 style="text-align:left !important;">{title}</h1>
+    </a>
+    
+    <div class="post-tags" style="text-align: left !important;"> 
+        <a>{category}</a> 
+    </div>
+    
+    <span style="text-align:left !important;">
+        {date}
+    </span>
+</div>
+-->

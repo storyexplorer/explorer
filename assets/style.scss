@@ -153,6 +153,11 @@ table tr td :last-child {
 #search-container {
   text-align: center;
   font-family: $site_font;
+  outline: $darkblue;
+
+  input[type=text]:focus{
+    outline: 2px solid $blue;
+  }
 }
 
 #search-input {
@@ -165,7 +170,7 @@ table tr td :last-child {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 18px;
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .share-box {
@@ -288,7 +293,7 @@ p > img {
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
+  border-bottom: 1px solid $gray;
 
   @include mobile {
     text-align: center;
@@ -339,7 +344,7 @@ p > img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: $darkerGray;
   font-size: 16px;
   max-width: 250px;
   font-style: italic;
@@ -362,20 +367,20 @@ nav {
   float: none;
   margin-top: 15px;
   font-family: $site_font;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
 
   @include mobile {
     float: none;
     margin-top: 0px;
     display: block;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   a {
     display: inline-block;
     margin-left: 20px;
-    color: $darkGray;
+    color: black;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -608,15 +613,15 @@ hr {
   }
 }
 
-.wrapper-container {
+.page-container {
   min-height: 100%;
   position: relative;
 }
 
-.wrapper-main {
+.wrapper-page-content {
   margin: 0 auto;
-  padding-bottom: 150px;
   max-width: 800px;
+  padding-bottom: 150px;
 }
 
 .wrapper-footer {
@@ -629,10 +634,10 @@ hr {
 }
 
 .copyright {
-  font-size: 14px;
+  font-size: 15px;
   padding: 10px;
   text-align: center;
-  color: $darkGray
+  color: $white
 }
 
 footer {
@@ -640,13 +645,22 @@ footer {
   text-align: center;
   padding: 20px 0;
   margin-bottom: -20px;
-  background-color: $lightGray;
+  background-color: $darkGray;
 
   a {
-    font-size: 16px;
+    font-size: 18px;
     padding: 12px;
     text-align: center;
-    color: $darkGray
+    color: $white;
+  }
+
+  .footer-links > a {
+    border-right: solid 1px $white;
+    display: inline-block;
+    line-height: 0px;
+  }
+  .footer-links > a:last-of-type {
+    border-right: none;
   }
 
 }
@@ -662,7 +676,7 @@ body:after {
 }
 
 #bar {
-    background: #000;
+    background: $darkblue;
     height: 7px;
     background-size: cover;
     background-position: left 60%;
@@ -693,13 +707,13 @@ body:after {
 
 .author_title{
   text-align: center;
-  color: #939aa1;
+  color: $darkerGray;
   letter-spacing: 2px;
 }
 
 .post_date{
   text-align: center;
-  color: #939aa1;
+  color: $darkerGray;
 }
 
 .cd-container a {
